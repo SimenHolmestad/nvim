@@ -26,6 +26,8 @@ require('lazy').setup {
 
   require 'packages.bookmarks',
 
+  require 'packages.neogit',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.indent_line',
