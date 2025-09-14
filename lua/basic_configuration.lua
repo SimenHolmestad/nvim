@@ -89,6 +89,8 @@ vim.keymap.set('n', '<leader>w', '<C-w>')
 vim.keymap.set('n', '<leader>wd', '<C-w>q')
 vim.keymap.set('n', '-', '/')
 
+vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 'i', 'c', 't', 'l' }, '<C-g>', '<Esc>')
+
 vim.api.nvim_set_keymap('n', '<leader>fs', ':w<Enter>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<C-x><C-c>', ':q!<Enter>', { silent = true })
@@ -103,12 +105,6 @@ vim.api.nvim_set_keymap('n', '<leader>en', ':tabnew<Enter>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<leader>el', 'gt', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>eh', 'gT', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ed', ':tabclose<Enter>', { noremap = true, silent = true })
-
--- Se https://neovide.dev/configuration.html for mer konfigurasjon
-vim.g.neovide_macos_simple_fullscreen = true
-vim.g.neovide_cursor_animation_length = 0
-vim.api.nvim_set_keymap('n', '<c-ø>', ':let g:neovide_macos_simple_fullscreen = v:false<Enter>', { noremap = true, silent = true })
-vim.g.neovide_scroll_animation_length = 0.2
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
