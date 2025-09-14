@@ -28,6 +28,8 @@ require('lazy').setup {
 
   require 'packages.neogit',
 
+  require 'packages.orgmode',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.indent_line',
