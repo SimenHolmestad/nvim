@@ -24,6 +24,8 @@ require('lazy').setup {
 
   require 'packages.autocompletion',
 
+  require 'packages.bookmarks',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.indent_line',

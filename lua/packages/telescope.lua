@@ -55,9 +55,8 @@ return {
       vim.keymap.set('n', '<leader>sp', builtin.live_grep, { desc = '[S]earch all files in [P]roject' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sn', builtin.resume, { desc = '[S]earch [N]ext' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = '[,] Find existing buffers' })
-      vim.keymap.set('n', '<leader><enter>', builtin.oldfiles, { desc = '[<enter>] Search resent files' })
 
       vim.keymap.set('n', '<leader>s/', function()
         builtin.live_grep {
