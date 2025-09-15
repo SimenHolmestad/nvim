@@ -96,8 +96,6 @@ vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 'i', 'c', 't', 'l' }, '<C-g>', '<Esc>'
 
 vim.api.nvim_set_keymap('n', '<leader>fs', ':w<Enter>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<C-x><C-c>', ':q!<Enter>', { silent = true })
-
 vim.keymap.set('n', '<leader>ss', '/', { desc = '[S]earch [S] current file' })
 
 vim.api.nvim_set_keymap('n', 's', '/', {})
