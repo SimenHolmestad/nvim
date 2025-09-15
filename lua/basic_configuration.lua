@@ -109,6 +109,16 @@ vim.api.nvim_set_keymap('n', '<leader>el', 'gt', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<leader>eh', 'gT', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ed', ':tabclose<Enter>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>ot', ':terminal<Enter>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>oo', function()
+  os.execute 'open .'
+end, { noremap = true, desc = '[O]pen [O] current folder in finder' })
+
+vim.keymap.set('n', '<leader>oi', function()
+  os.execute(string.format('open -a iTerm %s', vim.fn.getcwd()))
+end, { noremap = true, desc = '[O]pen [I]Term' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
