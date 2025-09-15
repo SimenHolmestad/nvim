@@ -100,7 +100,7 @@ vim.api.nvim_set_keymap('n', '<C-x><C-c>', ':q!<Enter>', { silent = true })
 
 vim.keymap.set('n', '<leader>ss', '/', { desc = '[S]earch [S] current file' })
 
-vim.api.nvim_set_keymap('n', 's', '/', { silent = true })
+vim.api.nvim_set_keymap('n', 's', '/', {})
 
 vim.api.nvim_set_keymap('n', '<leader>ff', ':e.<Enter>', { silent = true })
 
