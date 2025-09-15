@@ -61,7 +61,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -129,5 +129,21 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
+  end,
+})
+
+-- From https://www.reddit.com/r/neovim/comments/17eomi1/how_do_you_deal_with_vertical_scrolloff_not_being/
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
+  group = vim.api.nvim_create_augroup('ScrollOffEOF', {}),
+  callback = function()
+    local win_h = vim.api.nvim_win_get_height(0)
+    local off = math.min(vim.o.scrolloff, math.floor(win_h / 2))
+    local dist = vim.fn.line '$' - vim.fn.line '.'
+    local rem = vim.fn.line 'w$' - vim.fn.line 'w0' + 1
+    if dist < off and win_h - rem + dist < off then
+      local view = vim.fn.winsaveview()
+      view.topline = view.topline + off - (win_h - rem + dist)
+      vim.fn.winrestview(view)
+    end
   end,
 })
