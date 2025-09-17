@@ -117,8 +117,9 @@ vim.keymap.set('n', '<leader>oi', function()
   os.execute(string.format('open -a iTerm %s', vim.fn.getcwd()))
 end, { noremap = true, desc = '[O]pen [I]Term' })
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+vim.keymap.set('n', '<D-C-k>', ':bprev<Enter>')
+
+vim.keymap.set('n', '<D-C-j>', ':bnext<Enter>')
 
 -- Highlight when yanking (copying) text
 --  See `:help vim.highlight.on_yank()`
@@ -146,6 +147,22 @@ vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
   end,
 })
 
-vim.keymap.set('n', '<D-C-k>', ':bprev<Enter>')
-
-vim.keymap.set('n', '<D-C-j>', ':bnext<Enter>')
+-- From https://stackoverflow.com/questions/77747363/remove-white-spaces-added-in-nvim-on-save
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('trim_whitespaces', { clear = true }),
+  desc = 'Trim trailing white spaces',
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = '<buffer>',
+      -- Trim trailing whitespaces
+      callback = function()
+        -- Save cursor position to restore later
+        local curpos = vim.api.nvim_win_get_cursor(0)
+        -- Search and replace trailing whitespaces
+        vim.cmd [[keeppatterns %s/\s\+$//e]]
+        vim.api.nvim_win_set_cursor(0, curpos)
+      end,
+    })
+  end,
+})
