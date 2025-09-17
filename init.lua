@@ -30,6 +30,8 @@ require('lazy').setup {
 
   require 'packages.orgmode',
 
+  require 'packages.mini_surround',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.indent_line',
