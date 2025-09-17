@@ -12,10 +12,13 @@ return {
         org_default_notes_file = '~/org/refile.org',
         org_startup_indented = true,
         org_adapt_indentation = false,
+        org_ellipsis = ' [...]',
         -- org_log_done = false,
         mappings = {
           org = {
-            org_meta_return = '<C-enter>',
+            org_meta_return = '<leader>oh',
+            org_insert_heading_respect_content = '<C-Enter>',
+            org_insert_todo_heading_respect_content = '<D-C-Enter>',
             org_toggle_checkbox = '<leader>t',
             org_hide_leading_stars = true,
             org_open_at_point = '<leader>ol',
@@ -29,7 +32,7 @@ return {
             org_backward_heading_same_level = '<C-k>',
             org_next_visible_heading = '<C-l>',
             outline_up_heading = '<C-h>', -- For at denne skal fungere på mac, se https://github.com/neovide/neovide/issues/1230
-            org_todo = '<enter>',
+            org_todo = '<leader>mt',
             org_cycle_separator_lines = 0,
             org_startup_folded = 'overview',
           },
