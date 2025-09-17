@@ -145,3 +145,7 @@ vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
     end
   end,
 })
+
+vim.keymap.set('n', '<D-C-k>', ':bprev<Enter>')
+
+vim.keymap.set('n', '<D-C-j>', ':bnext<Enter>')
