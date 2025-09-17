@@ -117,9 +117,9 @@ vim.keymap.set('n', '<leader>oi', function()
   os.execute(string.format('open -a iTerm %s', vim.fn.getcwd()))
 end, { noremap = true, desc = '[O]pen [I]Term' })
 
-vim.keymap.set('n', '<D-C-k>', ':bprev<Enter>')
+vim.keymap.set('n', '<D-S-k>', ':bprev<Enter>')
 
-vim.keymap.set('n', '<D-C-j>', ':bnext<Enter>')
+vim.keymap.set('n', '<D-S-j>', ':bnext<Enter>')
 
 -- Highlight when yanking (copying) text
 --  See `:help vim.highlight.on_yank()`
