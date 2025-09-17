@@ -70,6 +70,10 @@ return {
       vim.keymap.set('n', '<leader>sc', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch neovim [C]onfiguration files' })
+
+      vim.keymap.set('n', '<leader>so', function()
+        builtin.find_files { cwd = vim.fs.joinpath(os.getenv 'HOME', 'Dropbox', 'org') }
+      end, { desc = '[S]earch [O]rg files' })
     end,
   },
 }
