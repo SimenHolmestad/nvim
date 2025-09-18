@@ -19,7 +19,7 @@ return {
             org_meta_return = '<leader>oh',
             org_insert_heading_respect_content = '<C-Enter>',
             org_insert_todo_heading_respect_content = '<D-S-Enter>',
-            org_toggle_checkbox = '<leader>t',
+            org_toggle_checkbox = '<enter>',
             org_hide_leading_stars = true,
             org_open_at_point = '<leader>ol',
             org_do_promote = '<D-h>',
@@ -74,8 +74,6 @@ return {
           fat_headlines = false,
         },
       }
-
-      vim.cmd [[highlight Folded guibg=#222222]]
     end,
   },
 }
