@@ -10,9 +10,10 @@ return {
     config = function()
       require('neogit').setup {
         disable_hint = true,
-        auto_close_console = false,
+        auto_show_console = false,
+        auto_close_console = true,
         auto_refresh = true,
-        kind = 'replace',
+        kind = 'tab',
         commit_editor = {
           kind = 'vsplit',
           show_staged_diff = false,
