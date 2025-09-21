@@ -16,39 +16,41 @@ return {
       })
 
       vim.g.my_current_theme_num = 1
-      -- local my_themes = { 'tokyonight_night', 'kanagawa' }
+
       local theme_funcs = {}
 
-      theme_funcs[1] = function()
+      -- tokyonight dark
+      table.insert(theme_funcs, function()
         vim.cmd.colorscheme 'tokyonight-night'
         vim.cmd 'set background=dark'
-      end
+      end)
 
-      theme_funcs[2] = function()
+      -- kanagawa dark
+      table.insert(theme_funcs, function()
         vim.cmd.colorscheme 'kanagawa'
         vim.cmd 'set background=dark'
-      end
+      end)
 
-      theme_funcs[3] = function()
+      -- kanagawa light
+      table.insert(theme_funcs, function()
         vim.cmd.colorscheme 'kanagawa'
         vim.cmd 'set background=light'
-      end
+      end)
 
-      theme_funcs[4] = function()
+      -- everforest light
+      table.insert(theme_funcs, function()
         vim.cmd.colorscheme 'everforest'
         vim.cmd 'set background=light'
-      end
+      end)
 
-      theme_funcs[5] = function()
+      -- solarized light
+      table.insert(theme_funcs, function()
         vim.cmd.colorscheme 'solarized'
         vim.cmd 'set background=light'
-      end
+      end)
 
       vim.keymap.set('n', '<leader>t', function()
-        vim.g.my_current_theme_num = vim.g.my_current_theme_num + 1
-        if vim.g.my_current_theme_num > #theme_funcs then
-          vim.g.my_current_theme_num = 1
-        end
+        vim.g.my_current_theme_num = (vim.g.my_current_theme_num % #theme_funcs) + 1
         theme_funcs[vim.g.my_current_theme_num]()
       end, { noremap = true, desc = '[T]oggle [T]hemes' })
 
