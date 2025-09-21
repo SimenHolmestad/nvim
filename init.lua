@@ -32,6 +32,8 @@ require('lazy').setup {
 
   require 'packages.mini_surround',
 
+  require 'packages.codecompanion',
+
   require 'kickstart.plugins.autopairs',
 
   require 'kickstart.plugins.indent_line',
