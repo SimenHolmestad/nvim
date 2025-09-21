@@ -10,7 +10,7 @@ return {
     config = function()
       require('neogit').setup {
         disable_hint = true,
-        auto_show_console = false,
+        auto_show_console = true,
         auto_close_console = true,
         auto_refresh = true,
         kind = 'tab',

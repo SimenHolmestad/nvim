@@ -85,7 +85,7 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Slett ord bakover på alt-backspace (som jeg har mappet til ctrl-backspace med karabiner)
-vim.api.nvim_set_keymap('i', '<M-bs>', '<C-w>', { noremap = false, silent = true })
+vim.keymap.set({ 'i', 'c' }, '<M-bs>', '<C-w>', { noremap = false, silent = true })
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set('n', '<leader>w', '<C-w>')

@@ -74,6 +74,7 @@ return {
           fat_headlines = false,
         },
       }
+      vim.api.nvim_set_keymap('n', '<leader>oL', 'I[[<esc>A]]<esc>', { noremap = true, silent = true })
     end,
   },
 }
