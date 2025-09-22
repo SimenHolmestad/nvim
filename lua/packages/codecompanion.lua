@@ -7,6 +7,11 @@ return {
     },
     config = function()
       require('codecompanion').setup {
+        display = {
+          chat = {
+            start_in_insert_mode = true,
+          },
+        },
         adapters = {
           http = {
             azure_openai = function()
@@ -29,6 +34,30 @@ return {
         strategies = {
           chat = {
             adapter = 'azure_openai',
+            keymaps = {
+              send = { modes = { n = '<C-enter>', i = '<C-enter>' } },
+              close = { modes = { n = '<leader>ld', i = '<leader>ld' } },
+              next_chat = { modes = { n = '<leader>lj' } },
+              previous_chat = { modes = { n = '<leader>lk' } },
+              next_header = { modes = { n = '<C-j>', v = '<C-j>' } },
+              previous_header = { modes = { n = '<C-k>', v = '<C-k>' } },
+            },
+            tools = {
+              ['create_file'] = {
+                opts = {
+                  requires_approval = false,
+                },
+              },
+              ['insert_edit_into_file'] = {
+                opts = {
+                  requires_approval = {
+                    buffer = false,
+                    file = false,
+                  },
+                  user_confirmation = false,
+                },
+              },
+            },
           },
           inline = {
             adapter = 'azure_openai',
@@ -36,9 +65,12 @@ return {
         },
       }
 
-      vim.keymap.set('n', '<leader>cc', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, desc = '[C]ode [C]hat' })
-      vim.keymap.set({ 'n', 'v' }, '<C-a>', '<cmd>CodeCompanionActions<cr>', { noremap = true, silent = true })
-      vim.keymap.set('v', 'ga', '<cmd>CodeCompanionChat Add<cr>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>ll', '<cmd>CodeCompanionChat Toggle<cr>', { noremap = true, desc = '[L]lm [L] Toggle chat' })
+      vim.keymap.set('n', '<leader>lc', '<cmd>CodeCompanionChat<cr>', { noremap = true, desc = '[L]lm new [C]hat' })
+      vim.keymap.set({ 'n', 'v' }, '<leader>la', '<cmd>CodeCompanionActions<cr>', { noremap = true, desc = '[L]lm code [A]ction' })
+      vim.keymap.set('v', 'gl', '<cmd>CodeCompanionChat Add<cr><esc>', { noremap = true, desc = 'Add to [L]lm chat' })
+      vim.keymap.set('n', '<leader>li', '<cmd>CodeCompanion ', { noremap = true, desc = '[L]lm code [I]nline chat' })
+      vim.cmd [[cab cc CodeCompanion]]
     end,
   },
   {
