@@ -39,7 +39,7 @@ return {
             },
             keymaps = {
               send = { modes = { n = '<C-enter>', i = '<C-enter>' } },
-              close = { modes = { n = '<leader>ld', i = '<leader>ld' } },
+              close = { modes = { n = '<leader>ld' } },
               next_chat = { modes = { n = '<leader>lj' } },
               previous_chat = { modes = { n = '<leader>lk' } },
               next_header = { modes = { n = '<C-j>' } },
