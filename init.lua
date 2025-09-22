@@ -5,10 +5,8 @@ require 'basic_configuration'
 
 require 'neovide'
 
--- [[ Install `lazy.nvim` plugin manager ]]
 require 'lazy_bootstrap'
 
--- [[ Configure and install plugins with lazy, to check status, run :Lazy ]]
 require('lazy').setup {
   require 'packages.basic_packages',
 

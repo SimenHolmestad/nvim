@@ -34,6 +34,9 @@ return {
         strategies = {
           chat = {
             adapter = 'azure_openai',
+            opts = {
+              completion_provider = 'cmp',
+            },
             keymaps = {
               send = { modes = { n = '<C-enter>', i = '<C-enter>' } },
               close = { modes = { n = '<leader>ld', i = '<leader>ld' } },
