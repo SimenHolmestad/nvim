@@ -59,12 +59,12 @@ return {
       vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = '[,] Find existing buffers' })
       vim.keymap.set('n', '<leader>st', builtin.colorscheme, { desc = '[S]earch [T]hemes' })
 
-      vim.keymap.set('n', '<leader>s/', function()
+      vim.keymap.set('n', '<leader>s,', function()
         builtin.live_grep {
           grep_open_files = true,
           prompt_title = 'Live Grep in Open Files',
         }
-      end, { desc = '[S]earch [/] in Open Files' })
+      end, { desc = '[S]earch [,] in Open Files' })
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sc', function()

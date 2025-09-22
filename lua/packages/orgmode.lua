@@ -74,7 +74,7 @@ return {
           fat_headlines = false,
         },
       }
-      vim.api.nvim_set_keymap('n', '<leader>oL', 'I[[<esc>A]]<esc>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>oL', 'I[[<esc>A]]<esc>', { noremap = true, desc = '[O]rg create [L]ink on line' })
     end,
   },
 }

@@ -107,7 +107,7 @@ vim.api.nvim_set_keymap('n', '<leader>el', 'gt', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<leader>eh', 'gT', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ed', ':tabclose<Enter>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>ot', ':terminal<Enter>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ot', ':terminal<Enter>', { noremap = true, desc = '[O]pen [T]erminal' })
 
 vim.keymap.set('n', '<leader>oo', function()
   os.execute 'open .'
