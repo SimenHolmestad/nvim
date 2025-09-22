@@ -12,6 +12,8 @@ require 'lazy_bootstrap'
 require('lazy').setup {
   require 'packages.basic_packages',
 
+  require 'packages.which_key',
+
   require 'packages.themes',
 
   require 'packages.telescope',
