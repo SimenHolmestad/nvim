@@ -33,7 +33,7 @@ return {
         },
         strategies = {
           chat = {
-            adapter = 'azure_openai',
+            adapter = 'copilot',
             opts = {
               completion_provider = 'cmp',
             },
@@ -42,8 +42,8 @@ return {
               close = { modes = { n = '<leader>ld', i = '<leader>ld' } },
               next_chat = { modes = { n = '<leader>lj' } },
               previous_chat = { modes = { n = '<leader>lk' } },
-              next_header = { modes = { n = '<C-j>', v = '<C-j>' } },
-              previous_header = { modes = { n = '<C-k>', v = '<C-k>' } },
+              next_header = { modes = { n = '<C-j>' } },
+              previous_header = { modes = { n = '<C-k>' } },
             },
             tools = {
               ['create_file'] = {
@@ -63,7 +63,7 @@ return {
             },
           },
           inline = {
-            adapter = 'azure_openai',
+            adapter = 'copilot',
           },
         },
       }
