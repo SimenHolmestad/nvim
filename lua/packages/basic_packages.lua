@@ -79,6 +79,22 @@ return {
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
 
+      -- For text object actions like gcii
+      require('mini.indentscope').setup {
+        draw = {
+          predicate = function()
+            return false
+          end,
+        },
+      }
+
+      -- Add surrounding in Normal and Visual modes
+      require('mini.surround').setup {
+        mappings = {
+          add = 'S',
+        },
+      }
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin

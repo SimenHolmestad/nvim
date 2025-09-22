@@ -30,8 +30,6 @@ require('lazy').setup {
 
   require 'packages.orgmode',
 
-  require 'packages.mini_surround',
-
   require 'packages.codecompanion',
 
   require 'kickstart.plugins.autopairs',
