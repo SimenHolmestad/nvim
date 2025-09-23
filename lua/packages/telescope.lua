@@ -59,6 +59,9 @@ return {
       vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = '[,] Find existing buffers' })
       vim.keymap.set('n', '<leader>st', builtin.colorscheme, { desc = '[S]earch [T]hemes' })
 
+      vim.keymap.set('n', '<D-n>', '<cmd>cnext<CR>', { desc = 'Next quickfix hit' })
+      vim.keymap.set('n', '<D-p>', '<cmd>cprev<CR>', { desc = 'Previous quickfix hit' })
+
       vim.keymap.set('n', '<leader>s,', function()
         builtin.live_grep {
           grep_open_files = true,

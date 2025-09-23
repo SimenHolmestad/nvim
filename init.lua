@@ -18,6 +18,8 @@ require('lazy').setup {
 
   require 'packages.telescope',
 
+  require 'packages.quicker',
+
   require 'packages.lsp',
 
   require 'packages.treesitter',
