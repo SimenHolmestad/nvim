@@ -10,6 +10,8 @@ require 'lazy_bootstrap'
 require('lazy').setup {
   require 'packages.basic_packages',
 
+  require 'packages.dired',
+
   require 'packages.yanky',
 
   require 'packages.which_key',
