@@ -38,7 +38,7 @@ return {
           },
         },
       }
-      vim.api.nvim_set_keymap('n', '<leader>gg', ':Neogit<Enter>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>gg', ':Neogit<Enter>', { noremap = true, silent = true })
     end,
   },
 }

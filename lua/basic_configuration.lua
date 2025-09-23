@@ -94,20 +94,20 @@ vim.keymap.set('n', '-', '/')
 
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 'i', 'c', 't', 'l' }, '<C-g>', '<Esc>')
 
-vim.api.nvim_set_keymap('n', '<leader>fs', ':w<Enter>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fs', ':w<Enter>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>ss', '/', { desc = '[S]earch [S] current file' })
 
-vim.api.nvim_set_keymap('n', 's', '/', {})
+vim.keymap.set('n', 's', '/', {})
 
-vim.api.nvim_set_keymap('n', '<leader>ff', ':e.<Enter>', { silent = true })
+vim.keymap.set('n', '<leader>ff', ':e.<Enter>', { silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>en', ':tabnew<Enter>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>el', 'gt', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>eh', 'gT', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ed', ':tabclose<Enter>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>en', ':tabnew<Enter>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>el', 'gt', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>eh', 'gT', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>ed', ':tabclose<Enter>', { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('n', '<leader>ot', ':terminal<Enter>', { noremap = true, desc = '[O]pen [T]erminal' })
+vim.keymap.set('n', '<leader>ot', ':terminal<Enter>', { noremap = true, desc = '[O]pen [T]erminal' })
 
 vim.keymap.set('n', '<leader>oo', function()
   os.execute 'open .'
@@ -166,3 +166,5 @@ vim.api.nvim_create_autocmd('FileType', {
     })
   end,
 })
+
+vim.keymap.set('n', '<leader>rl', 'vip:lua<Enter>', { desc = '[R]un lua [B]lock' })

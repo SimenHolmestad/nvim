@@ -12,7 +12,7 @@ return {
         },
       }
       require('telescope').load_extension 'bookmarks'
-      vim.api.nvim_set_keymap('n', '<leader><enter>', ':Telescope bookmarks<Enter>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader><enter>', ':Telescope bookmarks<Enter>', { noremap = true, silent = true })
     end,
   },
 }

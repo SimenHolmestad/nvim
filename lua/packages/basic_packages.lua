@@ -22,7 +22,7 @@ return {
     },
     config = function()
       require('hop').setup { keys = 'asdfghjkløqwertyuiopzxcvbnm' }
-      vim.api.nvim_set_keymap('n', 'ø', ':HopChar1<Enter>', { noremap = true, silent = true })
+      vim.keymap.set('n', 'ø', ':HopChar1<Enter>', { noremap = true, silent = true })
     end,
   },
 
@@ -48,7 +48,7 @@ return {
           dired_create = '+',
         },
       }
-      vim.api.nvim_set_keymap('n', '<leader>fd', ':Dired<Enter>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>fd', ':Dired<Enter>', { noremap = true, silent = true })
     end,
   },
 
@@ -56,7 +56,7 @@ return {
     'kelly-lin/ranger.nvim',
     config = function()
       -- require('ranger-nvim').setup { replace_netrw = true }
-      vim.api.nvim_set_keymap('n', '<leader>fr', '', {
+      vim.keymap.set('n', '<leader>fr', '', {
         noremap = true,
         callback = function()
           require('ranger-nvim').open(true)
