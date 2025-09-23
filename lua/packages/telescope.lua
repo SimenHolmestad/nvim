@@ -78,6 +78,14 @@ return {
         builtin.find_files { cwd = vim.fs.joinpath(os.getenv 'HOME', 'Dropbox', 'org') }
       end, { desc = '[S]earch [O]rg files' })
 
+      vim.keymap.set('n', '<leader>sP', function()
+        local data_path = vim.fn.stdpath 'data'
+        if type(data_path) ~= 'string' then
+          return nil
+        end
+        builtin.find_files { cwd = vim.fs.joinpath(data_path, 'lazy') }
+      end, { desc = '[S]earch nvim [P]ackages' })
+
       vim.keymap.set('n', '<leader>sp', function()
         builtin.live_grep { cwd = vim.fn.system('git rev-parse --show-toplevel'):gsub('[\n\r]', '') }
       end, { desc = '[S]earch grep in [P]roject' })
