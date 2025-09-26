@@ -63,4 +63,28 @@ return {
       vim.keymap.set('n', '<leader>gL', gitsigns.toggle_current_line_blame, { desc = '[G]it toggle show blame [L]ine' })
     end,
   },
+
+  {
+    'folke/snacks.nvim',
+    opts = {
+      gitbrowse = {
+        notify = true,
+        enabled = true,
+      },
+    },
+    config = function()
+      local snacks = require 'snacks'
+      vim.keymap.set({ 'n', 'x' }, '<leader>ghc', function()
+        snacks.gitbrowse {
+          open = function(url)
+            vim.fn.setreg('+', url)
+          end,
+          notify = false,
+        }
+      end, { desc = '[G]it[H]ub [C]opy line(s) url' })
+      vim.keymap.set({ 'n', 'x' }, '<leader>ghl', function()
+        snacks.gitbrowse { notify = false }
+      end, { desc = '[G]it[H]ub goto [L]ine(s) in browser' })
+    end,
+  },
 }
