@@ -101,6 +101,7 @@ return {
   {
     'OXY2DEV/markview.nvim',
     lazy = false,
+    priority = 1000,
     opts = {
       preview = {
         filetypes = {
@@ -108,6 +109,10 @@ return {
           'codecompanion',
         },
         ignore_buftypes = {},
+      },
+      experimental = {
+        check_rtp = false,
+        check_rtp_message = false,
       },
     },
   },
