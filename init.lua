@@ -40,13 +40,9 @@ require('lazy').setup {
 
   require 'packages.codecompanion',
 
-  require 'kickstart.plugins.autopairs',
+  require 'packages.autopairs',
 
-  require 'kickstart.plugins.indent_line',
+  require 'packages.indent_line',
 
-  -- Venter med disse, tenker kanskje at de ikke trengs:
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'packages.lint',
 }
