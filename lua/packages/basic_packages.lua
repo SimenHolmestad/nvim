@@ -13,19 +13,6 @@ return {
     end,
   },
 
-  {
-    'kelly-lin/ranger.nvim',
-    config = function()
-      -- require('ranger-nvim').setup { replace_netrw = true }
-      vim.keymap.set('n', '<leader>fr', '', {
-        noremap = true,
-        callback = function()
-          require('ranger-nvim').open(true)
-        end,
-      })
-    end,
-  },
-
   -- Hghlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
