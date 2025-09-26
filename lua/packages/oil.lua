@@ -15,7 +15,7 @@ return {
           show_hidden = true,
         },
       }
-      vim.keymap.set('n', '<leader>ff', ':Oil<Enter>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>ff', ':Oil<Enter>', { noremap = true, desc = '[F]ile [F]ind with Oil' })
 
       vim.api.nvim_create_autocmd('BufEnter', {
         pattern = '*',

@@ -94,7 +94,7 @@ vim.keymap.set('n', '-', '/')
 
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 'i', 'c', 't', 'l' }, '<C-g>', '<Esc>')
 
-vim.keymap.set('n', '<leader>fs', ':w<Enter>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>fs', ':w<Enter>', { noremap = true, desc = '[F]ile [S]ave' })
 
 vim.keymap.set('n', '<leader>ss', '/', { desc = '[S]earch [S] current file' })
 
@@ -167,4 +167,4 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
-vim.keymap.set('n', '<leader>rl', 'vip:lua<Enter>', { desc = '[R]un lua [B]lock' })
+vim.keymap.set('n', '<leader>cl', 'vip:lua<Enter>', { desc = '[R]un [L]ua block' })
