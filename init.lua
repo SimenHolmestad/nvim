@@ -32,7 +32,7 @@ require('lazy').setup {
 
   require 'packages.bookmarks',
 
-  require 'packages.neogit',
+  require 'packages.git',
 
   require 'packages.orgmode',
 
