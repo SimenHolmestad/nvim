@@ -44,17 +44,17 @@ return {
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
     config = function()
       local gitsigns = require 'gitsigns'
+      gitsigns.setup {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          delete = { text = '_' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+        },
+      }
 
       vim.keymap.set('n', '<leader>gr', gitsigns.reset_buffer, { desc = '[G]it [R]eset buffer' })
       vim.keymap.set('n', '<leader>gl', gitsigns.blame_line, { desc = '[G]it blame [L]ine' })
