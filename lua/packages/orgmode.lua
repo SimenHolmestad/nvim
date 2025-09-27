@@ -47,19 +47,6 @@ return {
         },
       }
 
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        pattern = '*',
-        callback = function()
-          -- Define own colors
-          vim.api.nvim_set_hl(0, '@org.headline.level1', { bg = nil })
-          vim.api.nvim_set_hl(0, '@org.headline.level2', { bg = nil })
-          vim.api.nvim_set_hl(0, '@org.headline.level3', { bg = nil })
-          vim.api.nvim_set_hl(0, '@org.headline.level4', { bg = nil })
-          vim.api.nvim_set_hl(0, '@org.headline.level5', { bg = nil })
-          vim.api.nvim_set_hl(0, '@org.plan', { fg = '#5a6878' })
-        end,
-      })
-
       vim.api.nvim_create_autocmd('BufReadPost', {
         pattern = '*.org',
         callback = function()

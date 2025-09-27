@@ -12,6 +12,7 @@ return {
         disable_hint = true,
         auto_show_console = true,
         auto_close_console = true,
+        disable_context_highlighting = false,
         auto_refresh = true,
         kind = 'tab',
         commit_editor = {
