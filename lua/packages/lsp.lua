@@ -180,6 +180,8 @@ return {
       local servers = {
         pyright = {},
         ts_ls = {}, -- Kan eventuelt bytte til https://github.com/pmizio/typescript-tools.nvim
+        omnisharp = {},
+        -- csharp_ls = {},
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
