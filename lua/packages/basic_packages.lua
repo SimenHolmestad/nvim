@@ -41,6 +41,7 @@ return {
         mappings = {
           add = 'S',
         },
+        respect_selection_type = true,
       }
 
       -- Simple and easy statusline.
