@@ -23,7 +23,7 @@ return {
           kind = 'replace',
         },
         commit_view = {
-          kind = 'replace',
+          kind = 'vsplit',
           verify_commit = vim.fn.executable 'gpg' == 1,
         },
         log_view = {
