@@ -63,7 +63,38 @@ return {
           fat_headlines = false,
         },
       }
+
       vim.keymap.set('n', '<leader>oL', 'I[[<esc>A]]<esc>', { noremap = true, desc = '[O]rg create [L]ink on line' })
+
+      vim.keymap.set('i', '<D-h>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC>h<D-h>A', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_do_promote (insert_mode)' })
+
+      vim.keymap.set('i', '<D-l>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC><D-l>la', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_do_demote (insert_mode)' })
+
+      vim.keymap.set('i', '<D-k>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC><D-k>a', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_move_subtree_up (insert_mode)' })
+
+      vim.keymap.set('i', '<D-j>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC><D-j>a', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_move_subtree_down (insert_mode)' })
+
+      vim.keymap.set('i', '<C-Enter>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC><C-Enter>', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_insert_heading_respect_content (insert_mode)' })
+
+      vim.keymap.set('i', '<D-S-Enter>', function()
+        local keys = vim.api.nvim_replace_termcodes('<ESC><D-S-Enter>', true, false, true)
+        vim.fn.feedkeys(keys)
+      end, { noremap = true, desc = 'org_insert_todo_heading_respect_content (insert_mode)' })
     end,
   },
 }
