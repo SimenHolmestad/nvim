@@ -27,6 +27,7 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-cmdline',
     },
     config = function()
       local cmp = require 'cmp'
@@ -55,7 +56,7 @@ return {
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
-          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<Tab>'] = cmp.mapping.complete {},
 
           ['<C-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
@@ -82,6 +83,18 @@ return {
           { name = 'codecompanion' },
         },
       }
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline {
+          ['<C-j>'] = { c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert } },
+          ['<C-k>'] = { c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert } },
+        },
+        sources = cmp.config.sources({
+          { name = 'cmdline' },
+        }, {
+          { name = 'path' },
+        }),
+      })
     end,
   },
 }
