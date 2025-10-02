@@ -32,12 +32,12 @@ return {
         move = {
           enable = true,
           set_jumps = true, -- whether to set jumps in the jumplist
-          goto_next_start = {
-            ['<C-j>'] = '@function.outer',
-          },
-          goto_previous_start = {
-            ['<C-k>'] = '@function.outer',
-          },
+          -- goto_next_start = {
+          --   ['<C-j>'] = '@function.outer',
+          -- },
+          -- goto_previous_start = {
+          --   ['<C-k>'] = '@function.outer',
+          -- },
         },
       },
     },
