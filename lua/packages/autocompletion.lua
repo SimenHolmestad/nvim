@@ -95,6 +95,10 @@ return {
           { name = 'path' },
         }),
       })
+
+      cmp.setup.cmdline('/', {
+        sources = cmp.config.sources {},
+      })
     end,
   },
 }
