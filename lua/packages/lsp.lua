@@ -179,8 +179,14 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         pyright = {},
-        ts_ls = {}, -- Kan eventuelt bytte til https://github.com/pmizio/typescript-tools.nvim
+        ts_ls = {
+          capabilities = {
+            documentFormattingProvider = false,
+            documentRangeFormattingProvider = false,
+          },
+        }, -- Kan eventuelt bytte til https://github.com/pmizio/typescript-tools.nvim
         omnisharp = {},
+        terraformls = {},
         -- csharp_ls = {},
         -- clangd = {},
         -- gopls = {},
