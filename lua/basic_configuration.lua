@@ -21,6 +21,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
+vim.opt.binary = false
+
 -- Enable break indent
 vim.opt.breakindent = true
 
