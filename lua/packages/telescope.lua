@@ -55,9 +55,15 @@ return {
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch with [G]rep from CWD' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sn', builtin.resume, { desc = '[S]earch [N]ext' })
-      vim.keymap.set('n', '<leader>.', builtin.oldfiles, { desc = '[.] Search Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecent Files' })
       vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = '[,] Find existing buffers' })
       vim.keymap.set('n', '<leader>st', builtin.colorscheme, { desc = '[S]earch [T]hemes' })
+      vim.keymap.set('n', '<leader>f.', function()
+        builtin.find_files { cwd = vim.fn.getcwd() }
+      end, { desc = '[F]ind file from [.] current directory' })
+      vim.keymap.set('n', '<leader>.', function()
+        builtin.find_files { cwd = vim.fn.getcwd() }
+      end, { desc = '[.] Find file from current directory' })
 
       vim.keymap.set('n', '<D-n>', '<cmd>cnext<CR>', { desc = 'Next quickfix hit' })
       vim.keymap.set('n', '<D-p>', '<cmd>cprev<CR>', { desc = 'Previous quickfix hit' })
