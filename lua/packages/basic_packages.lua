@@ -63,4 +63,25 @@ return {
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+
+  {
+    'chrisgrieser/nvim-spider',
+    config = function()
+      vim.keymap.set({ 'n', 'o', 'x' }, 'w', "<cmd>lua require('spider').motion('w')<CR>")
+      vim.keymap.set({ 'n', 'o', 'x' }, 'e', "<cmd>lua require('spider').motion('e')<CR>")
+      vim.keymap.set({ 'n', 'o', 'x' }, 'b', "<cmd>lua require('spider').motion('b')<CR>")
+    end,
+  },
+  {
+    'chrisgrieser/nvim-various-textobjs',
+    opts = {
+      keymaps = {
+        useDefaults = true,
+      },
+    },
+    config = function()
+      vim.keymap.set({ 'o', 'x' }, 'as', '<cmd>lua require("various-textobjs").subword("outer")<CR>')
+      vim.keymap.set({ 'o', 'x' }, 'is', '<cmd>lua require("various-textobjs").subword("inner")<CR>')
+    end,
+  },
 }
