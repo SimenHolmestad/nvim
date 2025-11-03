@@ -134,7 +134,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- From https://www.reddit.com/r/neovim/comments/17eomi1/how_do_you_deal_with_vertical_scrolloff_not_being/
-vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'BufEnter' }, {
+vim.api.nvim_create_autocmd({ 'CursorMoved', 'BufEnter' }, {
   group = vim.api.nvim_create_augroup('ScrollOffEOF', {}),
   callback = function()
     local win_h = vim.api.nvim_win_get_height(0)
