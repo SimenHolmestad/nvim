@@ -56,8 +56,8 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sn', builtin.resume, { desc = '[S]earch [N]ext' })
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecent Files' })
-      vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = '[,] Find existing buffers' })
       vim.keymap.set('n', '<leader>st', builtin.colorscheme, { desc = '[S]earch [T]hemes' })
+      vim.keymap.set({ 'n', 'v' }, '<leader>gc', builtin.git_bcommits, { desc = '[G]it find [C]ommits in file' })
       vim.keymap.set('n', '<leader>f.', function()
         builtin.find_files { cwd = vim.fn.getcwd() }
       end, { desc = '[F]ind file from [.] current directory' })
@@ -95,6 +95,14 @@ return {
       vim.keymap.set('n', '<leader>sp', function()
         builtin.live_grep { cwd = vim.fn.system('git rev-parse --show-toplevel'):gsub('[\n\r]', '') }
       end, { desc = '[S]earch grep in [P]roject' })
+
+      vim.keymap.set('n', '<leader>,', function()
+        builtin.find_files {
+          cwd = vim.fn.getcwd(),
+          prompt_title = 'Folders in CWD',
+          find_command = { 'fd', '--type', 'd', '--hidden', '--exclude', '.git' },
+        }
+      end, { desc = '[S]earch [,] Folders in CWD' })
     end,
   },
 }
