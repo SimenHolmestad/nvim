@@ -53,11 +53,13 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.git_files, { desc = '[ ] [ ] Search files in project' })
       vim.keymap.set('n', '<leader>ss', builtin.current_buffer_fuzzy_find, { desc = '[S]earch [S] file Telescope' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch with [G]rep from CWD' })
+      vim.keymap.set('n', '<leader>s.', builtin.live_grep, { desc = '[S]earch file content from [.] CWD' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sn', builtin.resume, { desc = '[S]earch [N]ext' })
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecent Files' })
       vim.keymap.set('n', '<leader>st', builtin.colorscheme, { desc = '[S]earch [T]hemes' })
       vim.keymap.set({ 'n', 'v' }, '<leader>gc', builtin.git_bcommits, { desc = '[G]it find [C]ommits in file' })
+      vim.keymap.set({ 'n', 'v' }, '<leader>gl', builtin.git_commits, { desc = '[G]it [L]ist commits' })
       vim.keymap.set('n', '<leader>f.', function()
         builtin.find_files { cwd = vim.fn.getcwd() }
       end, { desc = '[F]ind file from [.] current directory' })

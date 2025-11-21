@@ -58,10 +58,10 @@ return {
       }
 
       vim.keymap.set('n', '<leader>gr', gitsigns.reset_buffer, { desc = '[G]it [R]eset buffer' })
-      vim.keymap.set('n', '<leader>gl', gitsigns.blame_line, { desc = '[G]it blame [L]ine' })
-      vim.keymap.set('n', '<leader>gb', gitsigns.blame, { desc = '[G]it [B]lame file' })
       vim.keymap.set('n', '<leader>gd', gitsigns.diffthis, { desc = '[G]it [D]iff against index' })
-      vim.keymap.set('n', '<leader>gL', gitsigns.toggle_current_line_blame, { desc = '[G]it toggle show blame [L]ine' })
+      vim.keymap.set('n', '<leader>gbt', gitsigns.toggle_current_line_blame, { desc = '[G]it [B]lame [T]oggle show blame' })
+      vim.keymap.set('n', '<leader>gbl', gitsigns.blame_line, { desc = '[G]it [B]lame [L]ine' })
+      vim.keymap.set('n', '<leader>gbb', gitsigns.blame, { desc = '[G]it [B]lame [B]uffer' })
     end,
   },
 

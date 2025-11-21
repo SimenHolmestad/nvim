@@ -53,6 +53,7 @@ return {
         { '<leader>s', group = '[S]earch' },
         { '<leader>g', group = '[G]it' },
         { '<leader>gh', group = '[G]it[H]ub' },
+        { '<leader>gb', group = '[G]it [B]lame' },
       },
     },
   },
