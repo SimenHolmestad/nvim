@@ -67,8 +67,8 @@ return {
         builtin.find_files { cwd = vim.fn.getcwd() }
       end, { desc = '[.] Find file from current directory' })
 
-      vim.keymap.set('n', '<D-n>', '<cmd>cnext<CR>', { desc = 'Next quickfix hit' })
-      vim.keymap.set('n', '<D-p>', '<cmd>cprev<CR>', { desc = 'Previous quickfix hit' })
+      vim.keymap.set('n', '<D-j>', '<cmd>cnext<CR>', { desc = 'Next quickfix hit' })
+      vim.keymap.set('n', '<D-k>', '<cmd>cprev<CR>', { desc = 'Previous quickfix hit' })
 
       vim.keymap.set('n', '<leader>s,', function()
         builtin.live_grep {
