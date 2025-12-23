@@ -88,6 +88,7 @@ return {
         mapping = cmp.mapping.preset.cmdline {
           ['<C-j>'] = { c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert } },
           ['<C-k>'] = { c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert } },
+          ['<CR>'] = { c = cmp.mapping.confirm { behavior = cmp.SelectBehavior.Insert } },
         },
         sources = cmp.config.sources({
           { name = 'cmdline' },
