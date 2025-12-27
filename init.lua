@@ -7,6 +7,8 @@ require 'neovide'
 
 require 'lazy_bootstrap'
 
+require 'kokebok'
+
 require('lazy').setup {
   require 'packages.basic_packages',
 

@@ -53,7 +53,9 @@ return {
       vim.keymap.set('n', '<leader><leader>', builtin.git_files, { desc = '[ ] [ ] Search files in project' })
       vim.keymap.set('n', '<leader>ss', builtin.current_buffer_fuzzy_find, { desc = '[S]earch [S] file Telescope' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch with [G]rep from CWD' })
-      vim.keymap.set('n', '<leader>s.', builtin.live_grep, { desc = '[S]earch file content from [.] CWD' })
+      vim.keymap.set('n', '<leader>s.', function()
+        builtin.live_grep { additional_args = { '--no-ignore-vcs' } }
+      end, { desc = '[S]earch file content from [.] CWD' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sn', builtin.resume, { desc = '[S]earch [N]ext' })
       vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = '[F]ind [R]ecent Files' })
@@ -64,7 +66,7 @@ return {
         builtin.find_files { cwd = vim.fn.getcwd() }
       end, { desc = '[F]ind file from [.] current directory' })
       vim.keymap.set('n', '<leader>.', function()
-        builtin.find_files { cwd = vim.fn.getcwd() }
+        builtin.find_files { cwd = vim.fn.getcwd(), no_ignore = true }
       end, { desc = '[.] Find file from current directory' })
 
       vim.keymap.set('n', '<D-j>', '<cmd>cnext<CR>', { desc = 'Next quickfix hit' })
@@ -85,6 +87,17 @@ return {
       vim.keymap.set('n', '<leader>so', function()
         builtin.find_files { cwd = vim.fs.joinpath(os.getenv 'HOME', 'Dropbox', 'org') }
       end, { desc = '[S]earch [O]rg files' })
+
+      vim.keymap.set('n', '<leader>kf', function()
+        builtin.find_files { cwd = vim.fs.joinpath(os.getenv 'HOME', 'Dropbox', 'prosjekter', 'simens_kokebok', 'oppskrifter'), no_ignore = true }
+      end, { desc = '[K]okebok [F]ind' })
+
+      vim.keymap.set('n', '<leader>ks', function()
+        builtin.live_grep {
+          cwd = vim.fs.joinpath(os.getenv 'HOME', 'Dropbox', 'prosjekter', 'simens_kokebok', 'oppskrifter'),
+          additional_args = { '--no-ignore-vcs' },
+        }
+      end, { desc = '[K]okebok [S]earch' })
 
       vim.keymap.set('n', '<leader>sP', function()
         local data_path = vim.fn.stdpath 'data'

@@ -51,6 +51,7 @@ return {
         { '<leader>r', group = '[R]ename' },
         { '<leader>o', group = '[O]rg/[O]pen' },
         { '<leader>s', group = '[S]earch' },
+        { '<leader>k', group = '[K]okebok' },
         { '<leader>g', group = '[G]it' },
         { '<leader>gh', group = '[G]it[H]ub' },
         { '<leader>gb', group = '[G]it [B]lame' },
