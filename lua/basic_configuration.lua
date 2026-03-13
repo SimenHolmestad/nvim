@@ -170,3 +170,26 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.keymap.set('n', '<leader>cl', 'vip:lua<Enter>', { desc = '[R]un [L]ua block' })
+
+local function copy_file_reference()
+  local file_path = vim.api.nvim_buf_get_name(0)
+  if file_path == '' then
+    vim.notify('Current buffer has no file name', vim.log.levels.WARN)
+    return
+  end
+
+  local home = vim.fn.expand '~'
+  local relative_path = vim.fn.fnamemodify(file_path, ':~')
+  if relative_path == file_path and file_path:sub(1, #home) == home then
+    relative_path = '~' .. file_path:sub(#home + 1)
+  end
+
+  local line_number = vim.api.nvim_win_get_cursor(0)[1]
+  local reference = string.format('`%s:%d`', relative_path, line_number)
+
+  vim.fn.setreg('"', reference)
+  vim.fn.setreg('+', reference)
+  vim.notify(string.format('Copied %s', reference), vim.log.levels.INFO)
+end
+
+vim.keymap.set('n', '<leader>ll', copy_file_reference, { desc = '[L]lm copy current [L]ine' })
