@@ -38,6 +38,8 @@ require('lazy').setup {
 
   require 'packages.orgmode',
 
+  require 'packages.markdown',
+
   require 'packages.copilot',
 
   require 'packages.autopairs',

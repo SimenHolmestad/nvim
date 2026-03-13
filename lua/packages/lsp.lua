@@ -185,6 +185,7 @@ return {
             documentRangeFormattingProvider = false,
           },
         }, -- Kan eventuelt bytte til https://github.com/pmizio/typescript-tools.nvim
+        marksman = {},
         omnisharp = {},
         terraformls = {},
         -- csharp_ls = {},
