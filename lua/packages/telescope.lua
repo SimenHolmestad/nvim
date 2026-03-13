@@ -28,6 +28,17 @@ return {
       -- See `:help telescope` and `:help telescope.setup()`
       require('telescope').setup {
         defaults = {
+          layout_strategy = 'vertical',
+          sorting_strategy = 'descending',
+          layout_config = {
+            width = 0.95,
+            height = 0.95,
+            prompt_position = 'bottom',
+            mirror = true,
+            vertical = {
+              preview_height = 0.6,
+            },
+          },
           mappings = {
             i = {
               ['<C-j>'] = 'move_selection_next',
