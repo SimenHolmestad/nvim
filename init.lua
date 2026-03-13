@@ -40,8 +40,6 @@ require('lazy').setup {
 
   require 'packages.copilot',
 
-  require 'packages.codecompanion',
-
   require 'packages.autopairs',
 
   require 'packages.indent_line',
